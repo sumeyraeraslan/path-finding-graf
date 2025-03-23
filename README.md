@@ -19,6 +19,7 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/97a21b392daf4b9682c1daa
 `collections.deque`, Python'da **çift uçlu kuyruk (double-ended queue)** veri yapısını sağlayan bir modüldür. Bu veri yapısı, hem baştan hem de sondan ekleme ve çıkarma işlemlerini O(1) karmaşıklığında (yani sabit zaman) gerçekleştirir. Bu özelliği, deque'yi özellikle BFS (Breadth-First Search) gibi algoritmalarda kullanmak için ideal hale getirir.Hem **stack (LIFO - Last In First Out)** hem de **queue (FIFO - First In First Out)** gibi davranabilir.Ama BFS gibi algoritmalarda queue(kuyruk) olarak kullanılır. <br/> 
 
 **Peki ben nerede kullandım?** <br/> 
+
 `collections.deque`, `MetroAgi` sınıfının `en_az_aktarma_bul` metodunda kullandım. En az aktarma bulmak adına **FIFO (First in First Out yani ilk giren ilk çıkar)** prensibine sahip queue yapısını kullandım. Burda istasyonumuza uğrayarak, istasyonu ziyaret edildi olarak set ettikten sonra queue(kuyruk)'tan atmasını sağladım. `mevcut_istasyon`'da şu ana kadar ziyaret edilen istasyonu temsil eder.
 
 https://github.com/sumeyraeraslan/path-finding-graf/blob/bb97908372be73ff0807cd82c7b926a8fb093a09/S%C3%BCmeyraEraslan_MetroSimulation.py#L32-L55
@@ -28,10 +29,16 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/bb97908372be73ff0807cd8
 `heapq`, Python'da bir öncelik kuyruğu oluşturmak için kullanılan bir modüldür.Bu özellikle, **en küçük elemana hızlı erişip** elemanları sıralı bir şekilde tutmak için kullanıyoruz. `heapq`, bir **min-heap** yapısıdır, yani en küçük eleman her zaman kök(root) konumundadır. <br/> 
 
 **Peki ben nerede kullandım?** <br/> 
+
 heapq, `MetroAgi` sınıfının `en_hizli_rota_bul` metodunda kullandım. Bu algoritmada, en kısa rotaya öncelik verdip en hızlı rotaya ulaşmış olduk.  <br/>  
 https://github.com/sumeyraeraslan/path-finding-graf/blob/0c29be74d95bf2ede618c39b5e5843cb46e7e409/S%C3%BCmeyraEraslan_MetroSimulation.py#L58-L82
 
 ## 3. typing Modülü
+`typing` modülünü, kodun okunabilirliğini artırmak, hata ayıklamayı kolaylaştırmak ve IDE desteğinden daha iyi yararlanmak için kullanılır.
+
+ **Peki ben nerede kullandım?** <br/>
+ 
+
 
 
 
