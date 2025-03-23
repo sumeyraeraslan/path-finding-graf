@@ -1,11 +1,13 @@
 # path-finding-graf
 
 ## collections Modülü ##
-Modülün önemli amacı, kodumuzu daha okunabilir hale getirmek ve bazı ekstra türlerle veri işlemeyi basitleştirmektir.
+Modülün önemli amacı, kodumuzu daha okunabilir hale getirmek ve bazı ekstra türlerle veri işlemeyi basitleştirmektir. <br/> <br/> 
 
   `collections.defaultdict` <br/> 
-    <hr> `collections.defaultdict`, Python'da sözlüklerle çalışırken oldukça kullanışlı bir araçtır. Normal bir `dict` yapısında, var olmayan bir anahtara erişmeye çalıştığınızda bir **KeyError** hatası alırsınız. Ancak `defaultdict` kullanırsanız, var olmayan bir anahtara erişmeye çalıştığınızda, bu anahtar için otomatik olarak bir varsayılan değer oluşturur ve bu sayede hata almadan işleminize devam edebilirsiniz.
+    <hr> `collections.defaultdict`, Python'da sözlüklerle çalışırken oldukça kullanışlı bir araçtır. Normal bir `dict` yapısında, var olmayan bir anahtara erişmeye çalıştığınızda bir **KeyError** hatası alırsınız. Ancak `defaultdict` kullanırsanız, var olmayan bir anahtara erişmeye çalıştığınızda, bu anahtar için otomatik olarak bir varsayılan değer oluşturur ve bu sayede hata almadan işleminize devam edebilirsiniz. <br/> 
+    
    **Peki ben nerede kullandım?** <br/>
+   
    `collections.defaultdict`, MetroAgi sınıfının hatlar özelliğini tanımlarken kullanıldım. Hat adı eğer listede yoksa otomatik olarak boş bir liste oluşturucak. <br/> <br/>
    https://github.com/sumeyraeraslan/path-finding-graf/blob/84d3f541c002ec8f79214e4489763ee4135e7d4a/S%C3%BCmeyraEraslan_MetroSimulation.py#L15-L18 <br/>
 
@@ -16,4 +18,8 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/97a21b392daf4b9682c1daa
 ## collections.deque ##
 
 ## heapq ##
-`heapq`, Python'da bir öncelik kuyruğu oluşturmak için kullanılan bir modüldür. bu özellikle, **en küçük elemana hızlı erişip**
+`heapq`, Python'da bir öncelik kuyruğu oluşturmak için kullanılan bir modüldür. bu özellikle, **en küçük elemana hızlı erişip** elemanları sıralı bir şekilde tutmak için kullanıyoruz. `heapq`, bir **min-heap** yapısıdır, yani en küçük eleman her zaman kök(root) konumundadır. <br/> 
+
+**Peki ben nerede kullandım?** <br/> 
+heapq, `MetroAgi` sınıfının `en_hizli_rota_bul` metodunda kullandım.
+
