@@ -19,7 +19,9 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/97a21b392daf4b9682c1daa
 `collections.deque`, Python'da **çift uçlu kuyruk (double-ended queue)** veri yapısını sağlayan bir modüldür. Bu veri yapısı, hem baştan hem de sondan ekleme ve çıkarma işlemlerini O(1) karmaşıklığında (yani sabit zaman) gerçekleştirir. Bu özelliği, deque'yi özellikle BFS (Breadth-First Search) gibi algoritmalarda kullanmak için ideal hale getirir.Hem **stack (LIFO - Last In First Out)** hem de **queue (FIFO - First In First Out)** gibi davranabilir.Ama BFS gibi algoritmalarda queue(kuyruk) olarak kullanılır. <br/> 
 
 **Peki ben nerede kullandım?** <br/> 
-`collections.deque`, `MetroAgi` sınıfının `en_az_aktarma_bul` metodunda kullandım.
+`collections.deque`, `MetroAgi` sınıfının `en_az_aktarma_bul` metodunda kullandım. En az aktarma bulmak adına **FIFO (First in First Out yani ilk giren ilk çıkar)** prensibine sahip queue yapısını kullandım. Burda istasyonumuza uğrayarak, istasyonu ziyaret edildi olarak set ettikten sonra queue(kuyruk)'tan atmasını sağladım. `mevcut_istasyon`'da şu ana kadar ziyaret edilen istasyonu temsil eder.
+
+https://github.com/sumeyraeraslan/path-finding-graf/blob/bb97908372be73ff0807cd82c7b926a8fb093a09/S%C3%BCmeyraEraslan_MetroSimulation.py#L32-L55
 
 
 ## 2. heapq ##
