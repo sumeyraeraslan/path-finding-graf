@@ -44,9 +44,14 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/4f218ce3119a7fa1bd8ae8a
 # BFS Algoritması Nasıl Çalışır?
 BFS (Breadth-First Search), **bir graf veya ağaç yapısında düğümleri(node) dolaşmak** için kullanılan bir algoritmadır. BFS, **en az aktarmalı veya en kısa yol** gibi problemleri çözmek için idealdir bir algoritmadır. Belirli başlangıç bir düğümden başlayarak, önce başlangıç düğümünün **tüm komşularını** ziyaret eder, ardından bu **komşuların komşularını** ziyaret eder ve bu şekilde tüm grafı katman katman dolaşır. Bu yöntem, queue(kuyruk) veri yapısı kullanılarak gerçekleştirilir ve **FIFO (First In First Out - İlk Giren İlk Çıkar)** prensibine dayanır. BFS, özellikle ağırlıksız graflarda **en kısa yolu** bulmak için kullanılır, çünkü başlangıç düğümünden hedef düğüme giden en az sayıda adımı garanti eder.
 
-**BFS KODUM:**
+**BFS Kodum:**
 https://github.com/sumeyraeraslan/path-finding-graf/blob/b9e6e053127193b92c6abbf80cf0b120eef73139/S%C3%BCmeyraEraslan_MetroSimulation.py#L32-L55
 
 # A* Algoritması Nasıl Çalışır?
+A* Algoritması, bir graf veya harita üzerinde **en kısa yolu bulmak** için kullanılan bir arama algoritmasıdır. BFS gibi tüm olası yolları keşfetmek yerine, heuristic(sezgisel) bir tahmin kullanarak daha akıllıca bir arama yapar. Bu sayede, özellikle **büyük ve karmaşık yapılarda daha hızlı ve verimli** bir şekilde en kısa yolu bulur. A* algoritması, her bir düğüm için toplam tahmini maliyeti f(n) hesaplar. <br/> 
 
+**-f(n) = g(n) + h(n)** <br/>
 
+Gerçek maliyet '(g)' ile gösterilirken heuristic(sezgisel) maliyet '(h)' ile gösterilir. A* algoritması, her adımda en düşük f(n) değerine sahip düğümü seçer. Bu şekilde, hem gerçek maliyeti hem de hedefe olan tahmini mesafeyi dikkate alarak en verimli yolu bulur.Listeden en düşük f(n) değerine sahip düğümü seçer.Eğer bu düğüm hedef düğümse, algoritmayı sonlandır ve rotayı geriye doğru takip ederek bulur. Eğer değilse seçilen düğümün tüm komşularını gezer. Eğer açık listede değilse veya yeni bir yol daha kısaysa: g değerini günceller, h ve f(n) = g(n) + h(n) değerini hesaplar. Kapalı liste boşalana kadar adımları tekrarlar.
+
+**A * Kodum:**
