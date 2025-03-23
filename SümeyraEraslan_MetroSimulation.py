@@ -44,8 +44,8 @@ class MetroAgi:
         #Bir önceki adımda ziyaret edilen yapıyı visited'a atmıştık
         #Şimdi ise ziyaret edilmiş ve kuyruğun yapısında duran istasyonu kuyruktan atıyoruz.
 
-            if mevcut_istasyon== hedef: # Eğer mevcut istasyonumuz hedef id'mize eşit ise
-                return yol #yol'u return ediyoruz.
+            if mevcut_istasyon== hedef: # Eğer mevcut istasyonumuz hedef id'mize eşit ise yolu döndür
+                return yol 
 
             for komsu, _ in mevcut_istasyon.komsular: #Ziyaret edilmiş istasyonlardaki komşu istasyonlara bakmak için döngüye aldık
                 if komsu.idx not in visited: #Eğer komşu istasyonlardaki bir istasyon ziyaret edilmemişse git ve ziyaret et demek istiyor.
