@@ -9,5 +9,5 @@ Modülün önemli amacı, kodumuzu daha okunabilir hale getirmek ve bazı ekstra
    `collections.defaultdict`, MetroAgi sınıfının hatlar özelliğini tanımlarken kullanıldım. Hat adı eğer listede yoksa otomatik olarak boş bir liste oluşturucak. <br/> <br/>
    https://github.com/sumeyraeraslan/path-finding-graf/blob/84d3f541c002ec8f79214e4489763ee4135e7d4a/S%C3%BCmeyraEraslan_MetroSimulation.py#L15-L18 <br/>
 
-   Aşağıda gördüğünüz kodda da `defaultdict` `self.hatlar[hat].append(istasyon)` ifadesiyle, hatlar sözlüğünde hat anahtarına karşılık gelen listeye istasyon'u ekler.
+   Aşağıda gördüğünüz kodda da `defaultdict`, `istasyon_ekle` metodunda kullanılmıştır. `self.hatlar[hat].append(istasyon)` ifadesiyle de, hatlar sözlüğünde hat anahtarına karşılık gelen listeye istasyon'u eklemiş olduk. Eğer hat anahtarını sözlükte bulamazsa, defaultdict otomatik olarak bu anahtar için boş bir liste oluşturur ve istasyon'u bu listeye ekler.
 
