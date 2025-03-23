@@ -28,7 +28,7 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/bb97908372be73ff0807cd8
 `heapq`, Python'da bir öncelik kuyruğu oluşturmak için kullanılan bir modüldür.Bu özellikle, **en küçük elemana hızlı erişip** elemanları sıralı bir şekilde tutmak için kullanıyoruz. `heapq`, bir **min-heap** yapısıdır, yani en küçük eleman her zaman kök(root) konumundadır. <br/> 
 
 **Peki ben nerede kullandım?** <br/> 
-heapq, `MetroAgi` sınıfının `en_hizli_rota_bul` metodunda kullandım. <br/>  
+heapq, `MetroAgi` sınıfının `en_hizli_rota_bul` metodunda kullandım. Bu algoritmada, en kısa rotaya öncelik verdip en hızlı rotaya ulaşmış olduk.  <br/>  
 https://github.com/sumeyraeraslan/path-finding-graf/blob/0c29be74d95bf2ede618c39b5e5843cb46e7e409/S%C3%BCmeyraEraslan_MetroSimulation.py#L58-L82
 
 ## 3. typing Modülü
