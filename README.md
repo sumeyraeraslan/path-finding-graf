@@ -1,4 +1,4 @@
-# path-finding-graf
+# En Hızlı ve En Kısa Yolu Bulma
 
 ## 1. collections Modülü ##
 Modülün önemli amacı, kodumuzu daha okunabilir hale getirmek ve bazı ekstra türlerle veri işlemeyi basitleştirmektir. <br/> <br/> 
