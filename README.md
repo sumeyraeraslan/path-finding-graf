@@ -56,3 +56,17 @@ Gerçek maliyet '(g)' ile gösterilirken heuristic(sezgisel) maliyet '(h)' ile g
 
 **A * Kodum:**
 https://github.com/sumeyraeraslan/path-finding-graf/blob/109d283113cafd8c1e1cf6ae427f2c39c5fe4844/S%C3%BCmeyraEraslan_MetroSimulation.py#L66-L91
+
+# Neden BFS ve A * Algoritması Kullandık?
+
+BFS (Breadth-First Search) ve A* algoritmaları, yol bulma problemlerinde sıkça kullanılan iki farklı algoritmadır.
+**BFS algoritma kullanma nedenimiz:**
+En az aktarmalı rotayı bulur, basit ve anlaşılırdır ve eğer graf ağırlıksız ise (yani tüm kenarlar eşit maliyete sahipse), BFS her zaman en kısa yolu bulur.
+Bu projede BFS kullanma amacımız ise metro ağında, yolcular genellikle en az aktarmalı rotayı tercih etmek ister. Örneğin, bir yolcu A noktasından B noktasına giderken mümkün olduğunca az hat değiştirmek ister. Bu nedenle, BFS algoritması bu tür bir rotayı bulmak için ideal bir algoritmadır. 
+
+**A * algoritmasını kullanma nedenimiz:**
+A* algoritması, en hızlı rotayı bulmak için kullanılan bir algoritmadır. Bu projede kullanma amacımız ise metro ağında, yolcular çoğu zaman zamandan tasarruf etmek için en hızlı rotayı tercih etmek ister. En hızlı yolu bulmak için en uygun A* algoritmasıdır.
+
+# Örnek Kullanım ve Test Sonuçları
+
+
