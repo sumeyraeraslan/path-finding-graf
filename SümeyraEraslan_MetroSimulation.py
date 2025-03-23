@@ -33,9 +33,9 @@ class MetroAgi:
 
     def heuristic(self, istasyon1: Istasyon, istasyon2: Istasyon) -> int:
 
-        x1, y1 = istasyon1.koordinatlar
-        x2, y2 = istasyon2.koordinatlar
-        return abs(x1 - x2) + abs(y1 - y2)
+        x1, y1 = istasyon1.koordinatlar # istasyon1'in koordinatlarını aldık
+        x2, y2 = istasyon2.koordinatlar # istasyon2'in koordinatlarını aldık
+        return abs(x1 - x2) + abs(y1 - y2) #Mesafe hesaplama
     
     def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[Istasyon]]:
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar: #Eğer başlangıç değeri grafin içinde değilse
@@ -85,9 +85,10 @@ class MetroAgi:
 
             for komsu, gecis_suresi in mevcut.komsular:
                 if komsu not in ziyaret_edildi: #Daha önce ziyaret edilmediyse 
-                    yeni_sure = sure + gecis_suresi
+                    yeni_sure = sure + gecis_suresi # Var olan süreyle geçiş süresini topla ve yeni süreye aktar.
                     f = yeni_sure + self.heuristic(komsu, hedef)
-                    heapq.heappush(pq,(f, yeni_sure, id(komsu), komsu, yol + [komsu]))
+                    heapq.heappush(pq,(f, yeni_sure, id(komsu), komsu, yol + [komsu])) #heapq ile veriler, küçükten büyüğe sıralanır.
+                    #Tahmini değer, son süre değeri, şu anda değerlendirilen komşu düğüm, bu düğüme kadar gidilen yol + son eklenen düğüm değeri
         return None
 
 # Örnek Kullanım
