@@ -81,4 +81,4 @@ Bu projede ek olarak bir geliştirme yapmadım.Fakat nasıl geliştirilebilirdi 
 
 **Nasıl Geliştirilebilirdi?** <br/> 
 
-İlk olarak büyükşehirlerin yol güzargahları hakkında internetten veri çekebilirdik. Bu verilerle birlikte kullanıcıdan nereden nereye gitmek istediği hakkında bir girdi alabilirdik. Ve kullanıcılar için en uygun malliyetli yolu bulabilirdik. Yolcunun hangi yoldan gitmeyi isteğini filtrelemesini sağlayabilirdik(en hızlı, en kısa, en uygun maliyetli yada hepsi).
+İlk olarak büyükşehirlerin yol güzargahları hakkında internetten veri çekebilirdik. Bu verilerle birlikte kullanıcıdan nereden nereye gitmek istediği hakkında bir girdi alabilirdik. Ve kullanıcılar için en uygun malliyetli yolu bulabilirdik. Yolcunun hangi yoldan gitmeyi isteğini filtrelemesini sağlayabilirdik(en hızlı, en kısa, en uygun maliyetli ya da hepsi).
