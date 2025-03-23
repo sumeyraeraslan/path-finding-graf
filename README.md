@@ -16,12 +16,11 @@ Modülün önemli amacı, kodumuzu daha okunabilir hale getirmek ve bazı ekstra
 https://github.com/sumeyraeraslan/path-finding-graf/blob/97a21b392daf4b9682c1daa866f303a807206101/S%C3%BCmeyraEraslan_MetroSimulation.py#L20-L24
 
 ## b) collections.deque ##
-`collections.deque`, Python'da **çift uçlu kuyruk (double-ended queue)** veri yapısını sağlayan bir modüldür. Bu veri yapısı, hem baştan hem de sondan ekleme ve çıkarma işlemlerini O(1) karmaşıklığında (yani sabit zaman) gerçekleştirir. Bu özelliği, deque'yi özellikle BFS (Breadth-First Search) gibi algoritmalarda kullanmak için ideal hale getirir.Hem **stack (LIFO - Last In First Out)** hem de **queue (FIFO - First In First Out)** gibi davranabilir.Ama BFS gibi algoritmalarda queue(kuyruk) olarak kullanılır.
-
- <br/> 
+`collections.deque`, Python'da **çift uçlu kuyruk (double-ended queue)** veri yapısını sağlayan bir modüldür. Bu veri yapısı, hem baştan hem de sondan ekleme ve çıkarma işlemlerini O(1) karmaşıklığında (yani sabit zaman) gerçekleştirir. Bu özelliği, deque'yi özellikle BFS (Breadth-First Search) gibi algoritmalarda kullanmak için ideal hale getirir.Hem **stack (LIFO - Last In First Out)** hem de **queue (FIFO - First In First Out)** gibi davranabilir.Ama BFS gibi algoritmalarda queue(kuyruk) olarak kullanılır. <br/> 
 
 **Peki ben nerede kullandım?** <br/> 
 `collections.deque`, `MetroAgi` sınıfının `en_az_aktarma_bul` metodunda kullandım.
+
 
 ## 2. heapq ##
 `heapq`, Python'da bir öncelik kuyruğu oluşturmak için kullanılan bir modüldür.Bu özellikle, **en küçük elemana hızlı erişip** elemanları sıralı bir şekilde tutmak için kullanıyoruz. `heapq`, bir **min-heap** yapısıdır, yani en küçük eleman her zaman kök(root) konumundadır. <br/> 
@@ -29,6 +28,9 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/97a21b392daf4b9682c1daa
 **Peki ben nerede kullandım?** <br/> 
 heapq, `MetroAgi` sınıfının `en_hizli_rota_bul` metodunda kullandım. <br/>  
 https://github.com/sumeyraeraslan/path-finding-graf/blob/0c29be74d95bf2ede618c39b5e5843cb46e7e409/S%C3%BCmeyraEraslan_MetroSimulation.py#L58-L82
+
+## 3. typing Modülü
+
 
 
 
