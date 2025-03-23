@@ -3,12 +3,14 @@ import heapq
 from typing import Dict, List, Set, Tuple, Optional
 
 class Istasyon:
-    def __init__(self, idx: str, ad: str, hat: str):
+    def __init__(self, idx: str, ad: str, hat: str,koordinatlar: Tuple[int, int] = (0, 0)):
         self.idx = idx
         self.ad = ad
         self.hat = hat
         self.komsular: List[Tuple['Istasyon', int]] = []  # (istasyon, süre) tuple'ları
-
+        self.koordinatlar = koordinatlar  # (x, y) koordinatları
+        self.komsular: List[Tuple['Istasyon', int]] = []  # (istasyon, süre)
+        
     def komsu_ekle(self, istasyon: 'Istasyon', sure: int):
         self.komsular.append((istasyon, sure))
 
@@ -17,9 +19,9 @@ class MetroAgi:
         self.istasyonlar: Dict[str, Istasyon] = {}
         self.hatlar: Dict[str, List[Istasyon]] = defaultdict(list)
 
-    def istasyon_ekle(self, idx: str, ad: str, hat: str) -> None:
+    def istasyon_ekle(self, idx: str, ad: str, hat: str,koordinatlar: Tuple[int, int] = (0, 0)) -> None:
         if id not in self.istasyonlar:
-            istasyon = Istasyon(idx, ad, hat)
+            istasyon = Istasyon(idx, ad, hat, koordinatlar)
             self.istasyonlar[idx] = istasyon
             self.hatlar[hat].append(istasyon)
 
@@ -28,6 +30,12 @@ class MetroAgi:
         istasyon2 = self.istasyonlar[istasyon2_id]
         istasyon1.komsu_ekle(istasyon2, sure)
         istasyon2.komsu_ekle(istasyon1, sure)
+
+    def heuristic(self, istasyon1: Istasyon, istasyon2: Istasyon) -> int:
+
+        x1, y1 = istasyon1.koordinatlar
+        x2, y2 = istasyon2.koordinatlar
+        return abs(x1 - x2) + abs(y1 - y2)
     
     def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[Istasyon]]:
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar: #Eğer başlangıç değeri grafin içinde değilse
@@ -62,11 +70,11 @@ class MetroAgi:
         baslangic= self.istasyonlar[baslangic_id] #Değişkene atama
         hedef= self.istasyonlar[hedef_id]
 
-        pq = [(0, id(baslangic), baslangic, [baslangic])] #Kuyruk yapısı= başlangıç süresi, istasyonun id'si, mevcut istasyon, şu ana kadar izlenen yol
+        pq = [(0 + self.heuristic(baslangic, hedef),0, id(baslangic.idx), baslangic, [baslangic])] #Kuyruk yapısı= başlangıç süresi, istasyonun id'si, mevcut istasyon, şu ana kadar izlenen yol
         ziyaret_edildi = set()
 
         while pq:
-            sure, _, mevcut, yol = heapq.heappop(pq) #heapq.heappop() ile en düşük süreye sahip yolu buluyoruz
+            f,sure, _, mevcut, yol = heapq.heappop(pq) #heapq.heappop() ile en düşük süreye sahip yolu buluyoruz
 
             if mevcut in ziyaret_edildi: # ziyaret edildiyse devam et
                 continue
@@ -76,9 +84,10 @@ class MetroAgi:
                 return yol, sure
 
             for komsu, gecis_suresi in mevcut.komsular:
-                if komsu not in ziyaret_edildi: #Daha önce ziyaret edilmediyse
-                    heapq.heappush(pq, (sure + gecis_suresi, id(komsu), komsu, yol + [komsu])) #(yeni istasyoona ulaşma süresi, heap sıralamada kararsız olduğunda,yeni istasyon nesnesi,güncellenmiş rota)
-
+                if komsu not in ziyaret_edildi: #Daha önce ziyaret edilmediyse 
+                    yeni_sure = sure + gecis_suresi
+                    f = yeni_sure + self.heuristic(komsu, hedef)
+                    heapq.heappush(pq,(f, yeni_sure, id(komsu), komsu, yol + [komsu]))
         return None
 
 # Örnek Kullanım
@@ -87,22 +96,22 @@ if __name__ == "__main__":
     
     # İstasyonlar ekleme
     # Kırmızı Hat
-    metro.istasyon_ekle("K1", "Kızılay", "Kırmızı Hat")
-    metro.istasyon_ekle("K2", "Ulus", "Kırmızı Hat")
-    metro.istasyon_ekle("K3", "Demetevler", "Kırmızı Hat")
-    metro.istasyon_ekle("K4", "OSB", "Kırmızı Hat")
+    metro.istasyon_ekle("K1", "Kızılay", "Kırmızı Hat",(0,0))
+    metro.istasyon_ekle("K2", "Ulus", "Kırmızı Hat",(1,1))
+    metro.istasyon_ekle("K3", "Demetevler", "Kırmızı Hat",(2,2))
+    metro.istasyon_ekle("K4", "OSB", "Kırmızı Hat",(3,3))
     
     # Mavi Hat
-    metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat")
+    metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat",(5,5))
     metro.istasyon_ekle("M2", "Kızılay", "Mavi Hat")  # Aktarma noktası
     metro.istasyon_ekle("M3", "Sıhhiye", "Mavi Hat")
     metro.istasyon_ekle("M4", "Gar", "Mavi Hat")
     
     # Turuncu Hat
-    metro.istasyon_ekle("T1", "Batıkent", "Turuncu Hat")
-    metro.istasyon_ekle("T2", "Demetevler", "Turuncu Hat")  # Aktarma noktası
-    metro.istasyon_ekle("T3", "Gar", "Turuncu Hat")  # Aktarma noktası
-    metro.istasyon_ekle("T4", "Keçiören", "Turuncu Hat")
+    metro.istasyon_ekle("T1", "Batıkent", "Turuncu Hat",(3,3))
+    metro.istasyon_ekle("T2", "Demetevler", "Turuncu Hat",(4,4))  # Aktarma noktası
+    metro.istasyon_ekle("T3", "Gar", "Turuncu Hat",(5,5))  # Aktarma noktası
+    metro.istasyon_ekle("T4", "Keçiören", "Turuncu Hat",(6,6))
     
     # Bağlantılar ekleme
     # Kırmızı Hat bağlantıları
