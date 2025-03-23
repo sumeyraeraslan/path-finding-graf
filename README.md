@@ -45,6 +45,8 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/4f218ce3119a7fa1bd8ae8a
 BFS (Breadth-First Search), **bir graf veya ağaç yapısında düğümleri(node) dolaşmak** için kullanılan bir algoritmadır. BFS, **en az aktarmalı veya en kısa yol** gibi problemleri çözmek için idealdir bir algoritmadır. Belirli başlangıç bir düğümden başlayarak, önce başlangıç düğümünün **tüm komşularını** ziyaret eder, ardından bu **komşuların komşularını** ziyaret eder ve bu şekilde tüm grafı katman katman dolaşır. Bu yöntem, queue(kuyruk) veri yapısı kullanılarak gerçekleştirilir ve **FIFO (First In First Out - İlk Giren İlk Çıkar)** prensibine dayanır. BFS, özellikle ağırlıksız graflarda **en kısa yolu** bulmak için kullanılır, çünkü başlangıç düğümünden hedef düğüme giden en az sayıda adımı garanti eder.
 
 **BFS KODUM:**
+https://github.com/sumeyraeraslan/path-finding-graf/blob/b9e6e053127193b92c6abbf80cf0b120eef73139/S%C3%BCmeyraEraslan_MetroSimulation.py#L32-L55
 
+# A* Algoritması Nasıl Çalışır?
 
 
