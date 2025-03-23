@@ -69,7 +69,13 @@ A* algoritması, en hızlı rotayı bulmak için kullanılan bir algoritmadır. 
 
 # Örnek Kullanım ve Test Sonuçları
 Örnek kullanım kısmı, MetroAgi sınıfında verilerin girilmesi, sınıfının nasıl kullanılacağını gösteren bir dizi test senaryosu içerir. Bu test senaryoları, programın doğru çalışıp çalışmadığını denetler.
-istasyon_ekle metodu kullanılarak farklı hatlara ait istasyonlar eklenir. Her istasyonun bir kimliği (idx), adı (ad), hattı (hat) ve koordinatları (koordinatlar) vardır. 
+`istasyon_ekle` metodu kullanılarak farklı hatlara ait istasyonlar eklenir. Her istasyonun bir kimliği (idx), adı (ad), hattı (hat) ve koordinatları (koordinatlar) vardır. 
 Örneğin:
+https://github.com/sumeyraeraslan/path-finding-graf/blob/ef7474b4e3987e8883a98f97a080543116330179/S%C3%BCmeyraEraslan_MetroSimulation.py#L99-L99
+`baglanti_ekle` metodu kullanılarak istasyonlar arasındaki bağlantılar ve bu bağlantıların geçiş süreleri belirlenir. En sonda geçtiği rotaların toplam süresini ve bütün geçtiği rotaları yazdırır. 
 
+# Projeyi Geliştirme Fikirleri 
+Bu projede ek olarak bir geliştirme yapmadım.Fakat nasıl geliştirilebilirdi sorularına ufakta olsa fikirleri belirtmek ve kaydetmek istedim.
 
+**Nasıl Geliştirilebilirdi?**
+İlk olarak büyükşehirlerin yol güzargahları hakkında internetten veri çekebilirdik. Bu verilerle birlikte kullanıcıdan nereden nereye gitmek istediği hakkında bir girdi alabilirdik. Ve kullanıcılar için en uygun malliyetli yolu bulabilirdik. Yolcunun hangi yoldan gitmeyi isteğini filtrelemesini sağlayabilirdik(en hızlı, en kısa, en uygun maliyetli yada hepsi).
