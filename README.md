@@ -37,8 +37,9 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/0c29be74d95bf2ede618c39
 `typing` modülünü, kodun okunabilirliğini artırmak, hata ayıklamayı kolaylaştırmak ve IDE desteğinden daha iyi yararlanmak için kullanılır.
 
  **Peki ben nerede kullandım?** <br/>
- 
 
+ Aşağıda gördüğünüz kodda belirtilen parametrelerin tiplerini(str,int...) belirtmek için kullanıldı.
+https://github.com/sumeyraeraslan/path-finding-graf/blob/4f218ce3119a7fa1bd8ae8a4d239e0936d8e93a3/S%C3%BCmeyraEraslan_MetroSimulation.py#L5-L10
 
 
 
