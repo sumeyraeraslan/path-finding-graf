@@ -60,11 +60,13 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/109d283113cafd8c1e1cf6a
 # Neden BFS ve A * Algoritması Kullandık?
 
 BFS (Breadth-First Search) ve A* algoritmaları, yol bulma problemlerinde sıkça kullanılan iki farklı algoritmadır.
-**BFS algoritma kullanma nedenimiz:**
+**BFS algoritma kullanma nedenimiz:** <br/> 
+
 En az aktarmalı rotayı bulur, basit ve anlaşılırdır ve eğer graf ağırlıksız ise (yani tüm kenarlar eşit maliyete sahipse), BFS her zaman en kısa yolu bulur.
 Bu projede BFS kullanma amacımız ise metro ağında, yolcular genellikle en az aktarmalı rotayı tercih etmek ister. Örneğin, bir yolcu A noktasından B noktasına giderken mümkün olduğunca az hat değiştirmek ister. Bu nedenle, BFS algoritması bu tür bir rotayı bulmak için ideal bir algoritmadır. 
 
-**A * algoritmasını kullanma nedenimiz:**
+**A * algoritmasını kullanma nedenimiz:** <br/> 
+
 A* algoritması, en hızlı rotayı bulmak için kullanılan bir algoritmadır. Bu projede kullanma amacımız ise metro ağında, yolcular çoğu zaman zamandan tasarruf etmek için en hızlı rotayı tercih etmek ister. En hızlı yolu bulmak için en uygun A* algoritmasıdır.
 
 # Örnek Kullanım ve Test Sonuçları
@@ -77,5 +79,6 @@ https://github.com/sumeyraeraslan/path-finding-graf/blob/ef7474b4e3987e8883a98f9
 # Projeyi Geliştirme Fikirleri 
 Bu projede ek olarak bir geliştirme yapmadım.Fakat nasıl geliştirilebilirdi sorularına ufakta olsa fikirleri belirtmek ve kaydetmek istedim.
 
-**Nasıl Geliştirilebilirdi?**
+**Nasıl Geliştirilebilirdi?** <br/> 
+
 İlk olarak büyükşehirlerin yol güzargahları hakkında internetten veri çekebilirdik. Bu verilerle birlikte kullanıcıdan nereden nereye gitmek istediği hakkında bir girdi alabilirdik. Ve kullanıcılar için en uygun malliyetli yolu bulabilirdik. Yolcunun hangi yoldan gitmeyi isteğini filtrelemesini sağlayabilirdik(en hızlı, en kısa, en uygun maliyetli yada hepsi).
