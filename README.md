@@ -55,3 +55,4 @@ A* Algoritması, bir graf veya harita üzerinde **en kısa yolu bulmak** için k
 Gerçek maliyet '(g)' ile gösterilirken heuristic(sezgisel) maliyet '(h)' ile gösterilir. A* algoritması, her adımda en düşük f(n) değerine sahip düğümü seçer. Bu şekilde, hem gerçek maliyeti hem de hedefe olan tahmini mesafeyi dikkate alarak en verimli yolu bulur.Listeden en düşük f(n) değerine sahip düğümü seçer.Eğer bu düğüm hedef düğümse, algoritmayı sonlandır ve rotayı geriye doğru takip ederek bulur. Eğer değilse seçilen düğümün tüm komşularını gezer. Eğer açık listede değilse veya yeni bir yol daha kısaysa: g değerini günceller, h ve f(n) = g(n) + h(n) değerini hesaplar. Kapalı liste boşalana kadar adımları tekrarlar.
 
 **A * Kodum:**
+https://github.com/sumeyraeraslan/path-finding-graf/blob/109d283113cafd8c1e1cf6ae427f2c39c5fe4844/S%C3%BCmeyraEraslan_MetroSimulation.py#L66-L91
