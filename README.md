@@ -68,5 +68,8 @@ Bu projede BFS kullanma amacımız ise metro ağında, yolcular genellikle en az
 A* algoritması, en hızlı rotayı bulmak için kullanılan bir algoritmadır. Bu projede kullanma amacımız ise metro ağında, yolcular çoğu zaman zamandan tasarruf etmek için en hızlı rotayı tercih etmek ister. En hızlı yolu bulmak için en uygun A* algoritmasıdır.
 
 # Örnek Kullanım ve Test Sonuçları
+Örnek kullanım kısmı, MetroAgi sınıfında verilerin girilmesi, sınıfının nasıl kullanılacağını gösteren bir dizi test senaryosu içerir. Bu test senaryoları, programın doğru çalışıp çalışmadığını denetler.
+istasyon_ekle metodu kullanılarak farklı hatlara ait istasyonlar eklenir. Her istasyonun bir kimliği (idx), adı (ad), hattı (hat) ve koordinatları (koordinatlar) vardır. 
+Örneğin:
 
 
